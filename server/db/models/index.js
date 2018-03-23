@@ -23,22 +23,22 @@ const Message = require('./message')
 //  have many reviews
 //  have many messages
 
-// User.belongsToMany(Tool, {through: 'property'})
-// User.belongsToMany(Review, {through: 'author'})
-// User.belongsToMany(Review, {through: 'reviewee'})
-// User.belongsToMany(Message, {through: 'author'})
+User.belongsToMany(Tool, {through: 'usersProperty'})
+User.belongsToMany(Review, {through: 'authorReviews'})
+User.belongsToMany(Review, {through: 'revieweeReviews'})
+User.belongsToMany(Message, {through: 'MessageAuthor'})
 
-// Tool.belongsTo(User, {as: 'owner'})
+Tool.belongsTo(User, {as: 'owner'})
 
-// Exchange.belongsTo(Tool)
-// Exchange.belongsTo(User, {as: 'lender'})
-// Exchange.belongsTo(User, {as: 'borrower'})
+Exchange.belongsTo(Tool)
+Exchange.belongsTo(User, {as: 'lender'})
+Exchange.belongsTo(User, {as: 'borrower'})
 
-// Review.belongsTo(User, {as: 'author'})
-// Review.belongsTo(Exchange)
+Review.belongsTo(User, {as: 'author'})
+Review.belongsTo(Exchange)
 
-// Message.belongsTo(User, {as: 'author'})
-// Message.belongsTo(Message, {as: 'parent'})
+Message.belongsTo(User, {as: 'author'})
+Message.belongsTo(Message, {as: 'parent'})
 
 
 

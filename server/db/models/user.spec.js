@@ -3,6 +3,7 @@
 const {expect} = require('chai')
 const db = require('../index')
 const User = db.model('user')
+const Tool = db.model('tool')
 
 describe('User model', () => {
   beforeEach(() => {
@@ -10,19 +11,24 @@ describe('User model', () => {
   })
 
   describe('instanceMethods', () => {
-    describe('correctPassword', () => {
-      let cody
+    describe('create user', () => {
 
       beforeEach(() => {
-        return User.create({
+        Tool.create({
+          name: 'shovel'
+        })
+        User.create({
           username: 'josh123',
           region: 'NYC',
           zipcode: 10036,
           email: 'Joshuadsohn@gmail.com'
         })
           .then(user => {
-            console.log('User created!, ', user)
+            console.log('seeded model')
           })
+        Tool.create({
+          name: 'cutting board'
+        })
       })
     }) // end describe('correctPassword')
   }) // end describe('instanceMethods')

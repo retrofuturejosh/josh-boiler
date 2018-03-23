@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Tool = db.define('user', {
+const Tool = db.define('tool', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
