@@ -1,9 +1,9 @@
 import express from 'express';
 
-import news from './news'
+import tool from './tool'
 
 let router = express.Router();
 
-router.use('/news', news);
+router.use('/tool', tool);
 
 export default router;
