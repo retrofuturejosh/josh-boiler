@@ -1,9 +1,9 @@
 import express from 'express';
 
-import fakeroute from './fakeroute'
+import news from './news'
 
 let router = express.Router();
 
-router.use('/fakeroute', fakeroute);
+router.use('/news', news);
 
 export default router;
