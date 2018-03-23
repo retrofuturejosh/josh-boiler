@@ -13,7 +13,4 @@ router.post('/tools', (req, res, next) => {
     res.send('building');
 })
 
-
-router.use('/tools', tools);
-
 export default router;

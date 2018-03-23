@@ -1,9 +1,11 @@
 import React from 'react';
 
+import ToolForm from './ToolForm'
+
 const App = () => {
   return (
     <div className="app">
-      HI
+      <ToolForm/>
     </div>
   )
 }
