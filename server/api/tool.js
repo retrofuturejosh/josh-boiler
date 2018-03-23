@@ -3,14 +3,13 @@ const {Tool} = require('../db/models')
 
 module.exports = router
 
-router.post('/tools', (req, res, next) => {
+router.post('/', (req, res, next) => {
   let newTool = req.body
-  // Tool.create({
-
-  // })
-    // .then(tool => res.json(tool))
-    // .catch(next)
-    res.send('building');
+  Tool.create(newTool)
+    .then(tool => {
+      res.json(tool)
+    })
+    .catch(next)
 })
 
 export default router;

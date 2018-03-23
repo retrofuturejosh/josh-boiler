@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios"
 
 class ToolForm extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class ToolForm extends Component {
       features: this.state.features
     };
     this.setState({ tool: "", description: "", features: "" });
-    console.log(data);
+    axios.post("/api/tool", data)
   }
 
   render() {
